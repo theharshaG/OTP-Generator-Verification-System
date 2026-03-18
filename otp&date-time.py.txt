@@ -1,0 +1,18 @@
+import time
+import random
+from datetime import datetime
+
+print("Generating OTP...")
+time.sleep(2)
+
+otp = random.randint(1000, 9999)
+now = datetime.now()
+
+print("Your OTP is:", otp)
+print("Do not share this OTP")
+
+# Store in file
+with open("otp.txt", "a") as file:
+    file.write("OTP: " + str(otp) + " | Time: " + str(now) + "\n")
+
+print("OTP saved in file successfully")

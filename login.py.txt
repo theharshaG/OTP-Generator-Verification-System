@@ -1,0 +1,25 @@
+import random
+
+otp = random.randint(1000, 9999)
+print("OTP:", otp)
+
+attempts = 0
+max_attempts = 3
+
+while attempts < max_attempts:
+    try:
+        user_otp = int(input("Enter OTP: "))
+
+        if user_otp == otp:
+            print("Login successful")
+            break
+        else:
+            attempts += 1
+            print("Wrong OTP")
+
+    except ValueError:
+        print("OTP must be numbers only")
+
+# after loop
+if attempts == max_attempts:
+    print("Account blocked")
